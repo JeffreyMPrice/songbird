@@ -19,6 +19,8 @@ Rake is used to manage development tasks.
 
 `rake rubocop` to enforce code style and best practices. Rubocop is set to autocorrect for your convenience.
 
+`rake spec` to run the test suite 
+
 ## Extending the framework
 
 SongBird is meant to be easily extended to generate new activities. Create a new class that will subclass off of Activity and implement the 'log', 'intitialize' and 'execute' methods and the framework will automatically register your new class and execute any events that use the new class name.
