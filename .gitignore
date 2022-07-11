@@ -1,3 +1,4 @@
+# Github's standard ruby .gitignore
 *.gem
 *.rbc
 /.config
@@ -9,6 +10,8 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+# Specific to RubyMine
+/.idea
 
 # Used by dotenv library to load environment variables.
 # .env
