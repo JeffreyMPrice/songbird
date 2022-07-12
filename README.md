@@ -6,6 +6,9 @@ SongBird is a framework that generates end point activity across Windows, macOS 
 
 ## Usage
 
+`rake build` to build the work directory is ready for a new telemetry run. Runs clean before copying data.
+
+`rake clean` to remove any artifacts from older runs. Cleans up the work directory.
 ## Supported Actions
 
 Three actions are currently supported:
