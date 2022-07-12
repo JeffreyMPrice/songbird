@@ -2,6 +2,7 @@
 
 require 'fileutils'
 require 'pathname'
+require 'json'
 
 begin
   require 'rubocop/rake_task'
@@ -23,10 +24,17 @@ rescue LoadError
   puts 'No rspec available'
 end
 
-task :build do
+task build: :clean do
   Pathname('work/files').mkpath
   Pathname('work/log').mkpath
   FileUtils.copy('data/files/thanks_for_all_the_fish.txt', 'work/files/')
+end
+
+task run: :build do
+  require_relative 'lib/song_bird'
+  activities = JSON.parse(File.read('activities.json'))
+  sb = SongBird.new(activities)
+  sb.execute
 end
 
 task :clean do
