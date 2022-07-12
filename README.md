@@ -67,8 +67,18 @@ Rake is used to manage development tasks.
 
 SongBird is meant to be easily extended to generate new activities. Create a new class that will subclass off of Activity and implement the 'log', 'intitialize' and 'execute' methods and the framework will automatically register your new class and execute any events that use the new class name.
 
+## Testing Environments
+
+* Linux
+  * Ubuntu 20.04.1 LTS (Focal Fossa)
+  * Ruby 2.7.5p203 (2021-11-24 revision f69aeb8314) [x86_64-linux]
+* Windows
+  * Windows 10 Version 21H1 (OS Build 19043.1766)
+  * Ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x64-mingw-ucrt]
+
 ## To Do
 * Consider the ability to pass in an argument to specify the configuration file
+* macOS testing
 
 ## Why use the name SongBird?
 
