@@ -1,0 +1,23 @@
+[
+  {"file": {
+    "action": "create",
+    "file": "text.txt"
+  }},
+  {"file": {
+    "action": "modify",
+    "file": "thanks_for_all_the_fish.txt"
+  }},
+  {"file": {
+    "action": "delete",
+    "file": "text.txt"
+  }},
+  {"network": {
+    "location": "www.ijeff.com",
+    "data": "So long and thansk for all the fish"
+  }},
+  {"process": {
+    "executable": { "win": "dir",
+                    "linux":  "ls",
+                    "macOS":  "ls"}
+  }}
+]

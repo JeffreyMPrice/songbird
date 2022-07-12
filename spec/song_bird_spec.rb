@@ -5,9 +5,15 @@ require 'song_bird'
 
 describe SongBird do
   describe '.new' do
-    context 'given an empty song bird' do
-      it 'it will return correctly' do
-        sb = SongBird.new
+    context 'given no parameters' do
+      it 'it will return an ArgumentError' do
+        expect { SongBird.new }.to raise_error(ArgumentError)
+      end
+    end
+
+    context 'given an array' do
+      it 'it will create a SongBird' do
+        sb = SongBird.new([{ file: { action: 'create', name: 'test.txt' } }])
         expect(sb.class).to eq(SongBird)
       end
     end
