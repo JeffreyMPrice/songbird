@@ -1,5 +1,8 @@
 # frozen_string_literal: false
 
+require_relative 'activities/activity'
+Dir[File.join(__dir__, 'activities', '*.rb')].sort.each { |file| require file }
+
 # top level comment
 class SongBird
   attr_reader :activities
