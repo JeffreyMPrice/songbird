@@ -76,7 +76,7 @@ Rake is used to manage development tasks.
 
 `rake spec` to run the test suite.
 
-## Extending the framework
+## Extending the Framework
 
 SongBird is meant to be easily extended to generate new activities. Create a new subclass of Activity and implement the 'answers?', 'log', 'intitialize' and 'execute' methods. The framework will automatically register your new class and execute any events that use the new class "answers?".
 
@@ -98,11 +98,11 @@ runs as the last step to deal with this issue.
 * Test on macOS
 * Enable process activities to run only on specific platforms
 * Enhanced NetworkActivity class 
-  * Send other data than a GET get request
+  * Send other data than a GET request
   * Use different protocols other than HTTP
 * Expanded documentation in code 
 * Expanded test coverage. I favored functionality over tests given the time requirements.
-* Enhanced project hygiene. Near time limit I expanded the scope of my issues and did more than one feature per issue.
+* Enhanced project hygiene. Near the time limit, I expanded the scope of my issues and did more than one feature per issue.
 * More comprehensive error handling
 * Logging enhancements:
   * Allow log file per activity type
