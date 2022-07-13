@@ -39,12 +39,18 @@ class SongBird
     end
     a.each(&:execute)
     a.each(&:log)
+    kill_all(a)
   end
 
   def kill_all(activities)
     activities.each do |activity|
       # this won't work on windows, but windows ping behaves
-      Process.kill('TERM', activity.pid) if activity.pid
+      begin
+        Process.kill('TERM', activity.pid) if activity.pid
+      rescue
+        # do nothing, we'll ignore errors since it will on Windows
+      end
+
     end
   end
 end
