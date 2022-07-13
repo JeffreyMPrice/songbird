@@ -29,7 +29,7 @@ class FileActivity < Activity
     when 'delete'
       delete
     else
-      raise NotImplementedError, "FileActivity does not under #{action}"
+      raise NotImplementedError, "FileActivity does not understand #{action}"
     end
     log
   end
@@ -39,7 +39,7 @@ class FileActivity < Activity
   end
 
   def create
-    File.open(filename, "w") {|f| f.write("Made by Jeff")}
+    File.open(filename, "w") {|f| f.write("\nMade by Jeff")}
   end
 
   def delete
