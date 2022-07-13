@@ -43,7 +43,7 @@ Three actions are currently supported:
 For file actions, you must provide the operation to perform and the filename. 
 ```
 {"file": {
-          "operation": "create|modify|delete",
+          "action": "create|modify|delete",
           "filename": "<filename>"
          }
 }
