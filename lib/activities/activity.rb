@@ -12,7 +12,6 @@ class Activity
   end
 
   def self.set_process_info(username:, pid:, command_line:)
-    puts "command_line #{command_line}"
     @username = username
     @pid = pid
     @command_line = command_line
