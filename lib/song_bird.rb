@@ -27,6 +27,7 @@ class SongBird
     Activity.logger = @logger
   end
 
+  # rubocop:disable Metrics/MethodLength
   def execute
     set_activity
 
@@ -41,16 +42,15 @@ class SongBird
     a.each(&:log)
     kill_all(a)
   end
+  # rubocop:enable Metrics/MethodLength
 
   def kill_all(activities)
     activities.each do |activity|
       # this won't work on windows, but windows ping behaves
-      begin
-        Process.kill('TERM', activity.pid) if activity.pid
-      rescue
-        # do nothing, we'll ignore errors since it will on Windows
-      end
 
+      Process.kill('TERM', activity.pid) if activity.pid
+    rescue StandardError
+      # do nothing, we'll ignore errors since it will on Windows
     end
   end
 end

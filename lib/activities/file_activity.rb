@@ -23,8 +23,6 @@ class FileActivity < Activity
     mark_time
 
     send(action)
-
-    log
   end
 
   def log
