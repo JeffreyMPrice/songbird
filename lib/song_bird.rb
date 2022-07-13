@@ -5,15 +5,26 @@ Dir[File.join(__dir__, 'activities', '*.rb')].sort.each { |file| require file }
 
 # top level comment
 class SongBird
-  attr_reader :activities
+  attr_reader :activities, :path
 
-  def initialize(activities)
-    raise ArgumentError, 'SongBird requires a set of activities to execute' unless activities
+  def initialize(args)
+    a = args[:activities]
+    p = args[:path]
+    raise ArgumentError, 'SongBird requires a set of activities to execute' unless a
+    raise ArgumentError, 'SongBird requires a path for the work directory' unless p
 
-    @activities = activities
+    @activities = a
+    @path = p
   end
 
   def execute
-    puts activities.to_s
+    a = activities.map do |activity|
+      type = activity.keys[0]
+      activity_args = activity[type]
+      activity_args[:type] = type
+      activity_args[:path] = path
+      Activity.factory(activity_args)
+    end
+    a.each(&:execute)
   end
 end
