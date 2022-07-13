@@ -14,4 +14,9 @@ describe Activity do
       expect { Activity.new.execute }.to raise_error(NotImplementedError)
     end
   end
+  context 'when calling answers?' do
+    it 'raises NotImplementedError' do
+      expect { Activity.new.answers? 'fred' }.to raise_error(NotImplementedError)
+    end
+  end
 end

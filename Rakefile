@@ -33,7 +33,7 @@ end
 task run: :build do
   require_relative 'lib/song_bird'
   activities = JSON.parse(File.read('activities.json'))
-  sb = SongBird.new(activities)
+  sb = SongBird.new(activities: activities, path: File.expand_path('work'))
   sb.execute
 end
 
