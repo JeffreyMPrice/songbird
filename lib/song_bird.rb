@@ -39,6 +39,7 @@ class SongBird
     end
     a.each(&:execute)
     a.each(&:log)
+    kill_all(a)
   end
 
   def kill_all(activities)
