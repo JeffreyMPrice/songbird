@@ -92,6 +92,7 @@ SongBird is meant to be easily extended to generate new activities. Create a new
 ## Known Issues
 * NetworkActivity - When run on linux (and possibly macOS), ping does not terminate after 4 pings. There is a kill_all that
 runs as the last step to deal with this issue.
+* Tests require the work/log directory to be present. Workaround is to run :build before :spec.
 
 ## Future Enhancements
 * Pass in an argument to specify the configuration file
