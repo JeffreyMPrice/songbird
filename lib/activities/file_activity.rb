@@ -16,11 +16,12 @@ class FileActivity < Activity
   end
 
   def filename
-    path + "/files/" + file
+    "#{path}/files/#{file}"
   end
 
+  # rubocop:disable Metrics/MethodLength
   def execute
-    # TO DO - If time were not an issue, would do better here
+    # TO DO - If time were not an issue, would do better here (which is why rubocop dislikes)
     case action
     when 'create'
       create
@@ -33,13 +34,14 @@ class FileActivity < Activity
     end
     log
   end
+  # rubocop:enable Metrics/MethodLength
 
   def log
     puts 'Process Log'
   end
 
   def create
-    File.open(filename, "w") {|f| f.write("\nMade by Jeff")}
+    File.open(filename, 'w') { |f| f.write("\nMade by Jeff") }
   end
 
   def delete
@@ -47,6 +49,6 @@ class FileActivity < Activity
   end
 
   def modify
-    File.open(filename, "a") {|f| f.write("\nModified by Jeff")}
+    File.open(filename, 'a') { |f| f.write("\nModified by Jeff") }
   end
 end

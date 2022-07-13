@@ -23,10 +23,8 @@ class SongBird
       activity_args = activity[type]
       activity_args[:type] = type
       activity_args[:path] = path
-      act = Activity.factory(activity_args)
+      Activity.factory(activity_args)
     end
-    a.each do |activity|
-      activity.execute
-    end
+    a.each(&:execute)
   end
 end

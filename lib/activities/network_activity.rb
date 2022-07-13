@@ -2,7 +2,7 @@
 
 # top level comment
 class NetworkActivity < Activity
-  def initialize(args)
+  def initialize(_args)
     super()
   end
 
