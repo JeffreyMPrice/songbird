@@ -13,7 +13,7 @@ describe SongBird do
 
     context 'given an array' do
       it 'it will create a SongBird' do
-        sb = SongBird.new([{ file: { action: 'create', name: 'test.txt' } }])
+        sb = SongBird.new(activities: [{ file: { action: 'create', name: 'test.txt' } }], path: '/foo/bar')
         expect(sb.class).to eq(SongBird)
       end
     end

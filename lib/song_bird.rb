@@ -8,10 +8,11 @@ class SongBird
   attr_reader :activities, :path
 
   def initialize(args)
+    raise ArgumentError, 'SongBird requires a set of activities to execute' unless args[:activities]
+    raise ArgumentError, 'SongBird requires a path for the work directory' unless args[:path]
+
     a = args[:activities]
     p = args[:path]
-    raise ArgumentError, 'SongBird requires a set of activities to execute' unless a
-    raise ArgumentError, 'SongBird requires a path for the work directory' unless p
 
     @activities = a
     @path = p
