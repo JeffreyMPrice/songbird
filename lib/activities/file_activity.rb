@@ -19,25 +19,24 @@ class FileActivity < Activity
     "#{path}/files/#{file}"
   end
 
-  # rubocop:disable Metrics/MethodLength
   def execute
-    # TO DO - If time were not an issue, would do better here (which is why rubocop dislikes)
-    case action
-    when 'create'
-      create
-    when 'modify'
-      modify
-    when 'delete'
-      delete
-    else
-      raise NotImplementedError, "FileActivity does not understand #{action}"
-    end
+    mark_time
+
+    send(action)
+
     log
   end
-  # rubocop:enable Metrics/MethodLength
 
   def log
-    puts 'Process Log'
+    log = { action: 'File Activity',
+            timestamp: timestamp,
+            full_path: filename,
+            activity: action,
+            calling_username: Activity.username,
+            calling_process_name: Activity.process_name,
+            calling_pid: Activity.pid,
+            calling_command_line: Activity.command_line }
+    Activity.logger.info(log.to_json)
   end
 
   def create
