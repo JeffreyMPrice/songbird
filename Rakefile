@@ -28,6 +28,7 @@ task build: :clean do
   Pathname('work/files').mkpath
   Pathname('work/log').mkpath
   FileUtils.copy('data/files/thanks_for_all_the_fish.txt', 'work/files/')
+  FileUtils.copy('data/files/thanks_for_all_the_fish.txt', 'work/files/delete_me.txt')
 end
 
 task run: :build do

@@ -9,15 +9,16 @@
   }},
   {"file": {
     "action": "delete",
-    "file": "text.txt"
+    "file": "delete_me.txt"
   }},
   {"network": {
-    "location": "www.ijeff.com",
-    "data": "So long and thanks for all the fish"
+    "address": "www.ijeff.com",
+    "port": 80
   }},
   {"process": {
-    "executable": { "win": "dir",
-                    "linux":  "ls",
-                    "macOS":  "ls"}
+    "executable": "ping",
+    "arguments": [
+      "www.google.com"
+    ]
   }}
 ]
