@@ -4,7 +4,7 @@ require 'socket'
 
 # top level comment
 class NetworkActivity < Activity
-  attr_reader :address, :port, :payload, :local_ip, :local_port, :remote_ip, :remote_port, :response
+  attr_reader :address, :port, :payload, :local_ip, :local_port, :remote_ip, :remote_port, :response, :protocol
 
   def initialize(args)
     raise ArgumentError, 'Network activity must have an address' unless args['address']
@@ -47,8 +47,9 @@ class NetworkActivity < Activity
             destination_port: remote_port,
             source_address: local_ip,
             source_port: local_port,
+            protocol: 'HTTP',
             data_sent: payload.bytesize,
-            data_recieved: response.bytesize,
+            data_received: response.bytesize,
             calling_username: Activity.username,
             calling_process_name: Activity.process_name,
             calling_pid: Activity.pid,
